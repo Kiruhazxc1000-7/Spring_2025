@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Папич (EvilArthas)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #222;
+            color: white;
+            text-align: center;
+        }
+        .welcome {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .tabs, .content {
+            display: none;
+        }
+        .tab {
+            padding: 10px 20px;
+            border: 1px solid #555;
+            border-bottom: none;
+            background: #444;
+            color: white;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: #666;
+            font-weight: bold;
+        }
+        .content {
+            border: 1px solid #555;
+            padding: 10px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        textarea {
+            width: 100%;
+            height: 50%;
+            border: none;
+            outline: none;
+            resize: none;
+            font-size: 16px;
+            background: #333;
+            color: white;
+        }
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #666;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome" id="welcomeScreen">
+        <h1>Привет! Это мой сайт</h1>
+        <button class="btn" onclick="startSite()">Перейти</button>
+    </div>
+    
+    <div class="tabs" id="tabs">
+        <div class="tab active" onclick="openTab(0)">Биография</div>
+        <div class="tab" onclick="openTab(1)">Факты</div>
+        <div class="tab" onclick="openTab(2)">Рофлы</div>
+    </div>
+    <div class="content" id="content">
+        <textarea id="note1">Артем "Папич" (EvilArthas) — Известный русскоязычный стример Папич, он же EvilArthas, он же Величайший, мог бы стать одним из лучших профессиональных игроков культовой «Доты». Его аскетический образ жизни и невероятное количество рофлов сделали его культовым персонажем как в сообществе Dota 2, так и во всем рунете. </textarea>
+        <textarea id="note2" style="display: none;">1. Родился 19 ноября 1990 года в Виннице. 
+2. В 13–14 лет хотел стать профессиональным игроком в Warcraft 3, но позже отказался от этой идеи. 
+3. Ушёл из школы после восьмого класса, дальнейшее профессиональное образование не получал. 
+4. Начал играть в DotA Allstars в 2005 году, через год установил рекорд — 35 побед подряд на Луне. 
+5. В 2012 году зарабатывал на трейдинге в Steam. 
+6. Начал стримить в 2015 году. 
+7. В 2018 году, после нескольких банов Twitch-канала, перешёл на YouTube. 
+8. В 2019 году был забанен на Twitch, причиной стали жалобы пользователей за разжигание ненависти. 
+9. 17 февраля 2023 года в Steam вышла игра про Папича под названием Arthas – The Game, вторая часть появилась в продаже 12 апреля 2024 года. 
+10. Летом 2024 года Цаль улетел в Дубай, где снимает лайфстайл-ролики по заказу одной букмекерской конторы.</textarea>
+        <textarea id="note3" style="display: none;">1. "НЫЫЫАААА!" — фраза, ставшая легендой.
+2. "Я НЕ УМРУ, Я БУДУ ЖИТЬ ВЕЧНО!" — всегда останется в наших сердцах
+3. "ЧТО ТЫ ДЕЛАЕШЬ!? НЕЕЕТ!" — отражается в душах миллионов.
+4. "А я все думал, когда же ты появишься!" — многие вспоминают с ностальгией.
+5. "Найс я щас убью всех №@%&^!" — мало кто сможет забыть
+6. Ну а кто не знает его Гимн — "VI-KA VI-KA VI-KA"</textarea>
+        <img id="tabImage" src="12.png" alt="Папич">
+    </div>
+    <script>
+        const images = [
+            "12.png",
+            "212.png",
+            "323.png"
+        ];
+        
+        function startSite() {
+            document.getElementById("welcomeScreen").style.display = "none";
+            document.getElementById("tabs").style.display = "flex";
+            document.getElementById("content").style.display = "flex";
+        }
+        
+        function openTab(index) {
+            let tabs = document.querySelectorAll('.tab');
+            let textareas = document.querySelectorAll('textarea');
+            let img = document.getElementById('tabImage');
+            
+            tabs.forEach((tab, i) => {
+                tab.classList.toggle('active', i === index);
+                textareas[i].style.display = i === index ? 'block' : 'none';
+            });
+            img.src = images[index];
+        }
+    </script>
+</body>
+</html>

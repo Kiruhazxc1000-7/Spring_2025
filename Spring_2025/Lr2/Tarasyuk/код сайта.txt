@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сайт о легенде рунета</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    #welcome-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #welcome-screen h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #welcome-screen button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #welcome-screen button:hover {
+      background-color: #666;
+    }
+
+    nav {
+      background-color: #2c2c2c;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    nav button:hover {
+      background-color: #666;
+    }
+
+    .tab {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #2b2b2b;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #ffcc00;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 200px;
+      margin: 10px;
+      border-radius: 8px;
+      border: 2px solid #555;
+    }
+  </style>
+  <script>
+    function hideWelcome() {
+      document.getElementById("welcome-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      openTab("bio");
+    }
+
+    function openTab(tabName) {
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach(tab => tab.style.display = "none");
+      document.getElementById(tabName).style.display = "block";
+    }
+
+    window.onload = function () {
+      const images = [
+        "https://placekitten.com/300/200",
+        "https://placekitten.com/301/200",
+        "https://placekitten.com/302/200"
+      ];
+      const gallery = document.querySelector(".gallery");
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Сайт о легенде рунета</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    #welcome-screen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    #welcome-screen h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+
+    #welcome-screen button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #444;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    #welcome-screen button:hover {
+      background-color: #666;
+    }
+
+    nav {
+      background-color: #2c2c2c;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav button {
+      background-color: #444;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    nav button:hover {
+      background-color: #666;
+    }
+
+    .tab {
+      display: none;
+      padding: 20px;
+      max-width: 800px;
+      margin: auto;
+      background-color: #2b2b2b;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: #ffcc00;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 200px;
+      border-radius: 8px;
+      border: 2px solid #555;
+    }
+  </style>
+  <script>
+    function hideWelcome() {
+      document.getElementById("welcome-screen").style.display = "none";
+      document.getElementById("main-content").style.display = "block";
+      openTab("bio");
+    }
+
+    function openTab(tabName) {
+      const tabs = document.querySelectorAll(".tab");
+      tabs.forEach(tab => tab.style.display = "none");
+      document.getElementById(tabName).style.display = "block";
+    }
+  </script>
+</head>
+<body>
+
+  <div id="welcome-screen">
+    <h1>Сайт о легенде рунета</h1>
+    <button onclick="hideWelcome()">Войти</button>
+  </div>
+
+  <div id="main-content" style="display:none;">
+    <nav>
+      <button onclick="openTab('bio')">Биография</button>
+      <button onclick="openTab('facts')">Факты</button>
+      <button onclick="openTab('memes')">Рофлы</button>
+    </nav>
+
+    <section id="bio" class="tab">
+      <h2>Биография</h2>
+      <p>
+        Был разработан сайт, посвящённый легенде рунета.
+        В рамках проекта реализовано:
+      </p>
+      <ul>
+        <li>Приветственный экран, скрываемый по нажатию</li>
+        <li>Навигация по вкладкам (Биография, Факты, Рофлы)</li>
+        <li>Стилизация всех элементов в едином стиле</li>
+      </ul>
+      <p>
+        Основной код написан с использованием HTML, CSS и JavaScript.
+      </p>
+    </section>
+
+    <section id="facts" class="tab">
+      <h2>Факты</h2>
+      <ul>
+        <li>Создано техническое задание (см. Приложение А)</li>
+        <li>Разработаны макеты страниц</li>
+        <li>Оформлена структура проекта и папок</li>
+        <li>Написан файл <code>style.css</code> с основными стилями</li>
+        <li>Реализована функция скрытия приветственного экрана</li>
+        <li>Функция <code>openTab()</code> переключает вкладки</li>
+      </ul>
+    </section>
+
+    <section id="memes" class="tab">
+      <h2>Рофлы</h2>
+      <p>Массив фотографий, используемый на вкладке "Рофлы":</p>
+      <div class="gallery">
+        <img src="./img/212" alt="Фото 1">
+        <img src="./img/12"alt="Фото 2">
+        <img src="./img/323"alt="Фото 3">
+      </div>
+      <p><em>В результате выполнения лабораторной работы был создан сайт об одной легенде рунета!</em></p>
+    </section>
+  </div>
+
+</body>
+</html>
